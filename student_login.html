@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Login Page</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    overflow:hidden;
+}
+
+/* Animated Background */
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.1);
+    animation:float 8s infinite ease-in-out;
+}
+
+.circle:nth-child(1){
+    width:200px;
+    height:200px;
+    top:10%;
+    left:10%;
+}
+
+.circle:nth-child(2){
+    width:300px;
+    height:300px;
+    bottom:10%;
+    right:10%;
+    animation-delay:2s;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-40px);
+    }
+}
+
+/* Login Box */
+.login-box{
+    position:relative;
+    width:380px;
+    padding:40px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,0,0,0.4);
+    animation:slideIn 1s ease;
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.login-box h2{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+.input-group{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+    background:transparent;
+    border:2px solid rgba(255,255,255,0.3);
+    border-radius:10px;
+    color:white;
+    outline:none;
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border-color:#38bdf8;
+    box-shadow:0 0 15px #38bdf8;
+}
+
+.input-group label{
+    position:absolute;
+    left:15px;
+    top:15px;
+    color:#ccc;
+    pointer-events:none;
+    transition:0.3s;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label{
+    top:-10px;
+    left:10px;
+    font-size:12px;
+    background:#0f172a;
+    padding:0 5px;
+}
+
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(45deg,#38bdf8,#6366f1);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #38bdf8;
+}
+
+.links{
+    margin-top:20px;
+    text-align:center;
+}
+
+.links a{
+    color:#38bdf8;
+    text-decoration:none;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}
+</style>
+</head>
+<body>
+
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="login-box">
+    <h2>Welcome Back</h2>
+
+    <form>
+        <div class="input-group">
+            <input type="email" required>
+            <label>Email </label>
+        </div>
+
+        <div class="input-group">
+            <input type="password" required>
+            <label>Password</label>
+        </div>
+
+        <button class="btn"><a href="college.html">Login</a></button>
+
+        <div class="links">
+            <p><a href="#">Forgot Password?</a></p>
+            <a href="student_register.html">Create your account</a>
+        </div>
+    </form>
+</div>
+
+    
+
+</body>
+</html>
