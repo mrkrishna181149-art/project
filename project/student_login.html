@@ -1,189 +1,302 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+    <title>SDI College | Admission</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            justify-content:center;
+            background-color: white;
+            background: url("https://images.unsplash.com/photo-1789758489815-2f8db7ff9f62?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D") no-repeat center center;
+            background-size: cover;
+            background-position: center;
+            flex-wrap:wrap;
+            display: flex; 
+            
+            
+        }
+        .admission{
+            background-color: rgb(8, 8, 141);
+            margin:10px;
+            padding:10px;
+            border: 1px solid rgb(33, 188, 202);
+            align-items: center;
+            width:600px;
+            height:800px;
+            border-radius: 20px;
+        
+        }
 
-body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
-    overflow:hidden;
-}
+        .admission h2{
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            margin:20px;
+            padding: 20px;
+            gap: 25px;
+        }
+        .form-group{
+            position: relative;
 
-/* Animated Background */
-.circle{
-    position:absolute;
-    border-radius:50%;
-    background:rgba(255,255,255,0.1);
-    animation:float 8s infinite ease-in-out;
-}
+        }
+        .form-group input{
+            width:100%;
+            padding:15px;
+            background: transparent;
+            border-radius:10px;
+            color:white;
+            outline:none;
+            transition:0.3s;
+        }
+        .form-group input:focus{
+           box-shadow: 0px 0px 20px 5px rgb(44, 181, 194) ;
+           border: 2px solid rgb(21, 160, 195);
+        }
+        .form-group label{
+            left:15px;
+            top:15px;
+            color: white;
+            transition:0.1s;
+        }
+        select{
+            width:100%;
+            height: 30px;
+            border-radius:10px;
+        }
+        textarea{
+            width:100%;
+            height:100px;
+            border-radius:10px;
+            
+        }
+        textarea:focus{
+            box-shadow: 0px 0px 20px 5px rgb(20, 174, 222) ;
+            border: 2px solid rgb(17, 164, 222);
+        }
+        button{
+            background-color: rgb(13, 220, 220);
+            height:50px;
+            border:2px solid rgb(13, 220, 220) ;
+            border-radius:20px;
+            font-size:large;
+        }
+        button:hover{
+            background-color:rgb(8, 8, 141);
+            box-shadow:0px 0px 20px 5px aqua;
+            color: white;
+            cursor: pointer;
+        }
+        .header{
+            background: #082567;
+            color: white;
+            padding: 15px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            width:100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
 
-.circle:nth-child(1){
-    width:200px;
-    height:200px;
-    top:10%;
-    left:10%;
-}
+        .logo span {
+            color: #ffd700;
+        }
+        nav{
+            height:80px;
+            display:flex;
+            align-items:center;
+        }
 
-.circle:nth-child(2){
-    width:300px;
-    height:300px;
-    bottom:10%;
-    right:10%;
-    animation-delay:2s;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin:40px 0px 0px 200px;
+        }
 
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-40px);
-    }
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
 
-/* Login Box */
-.login-box{
-    position:relative;
-    width:380px;
-    padding:40px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:20px;
-    box-shadow:0 0 40px rgba(0,0,0,0.4);
-    animation:slideIn 1s ease;
-}
+        nav ul li a:hover {
+            color: #f8d405;
+        }
+         /* Footer */
+        footer {
+            background: #061a45;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+            width:100%;
+        }
 
-@keyframes slideIn{
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+        footer h2 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
 
-.login-box h2{
-    text-align:center;
-    color:white;
-    margin-bottom:30px;
-}
+        .social {
+            margin: 15px 0;
+        }
 
-.input-group{
-    position:relative;
-    margin-bottom:25px;
-}
+        .social a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
 
-.input-group input{
-    width:100%;
-    padding:15px;
-    background:transparent;
-    border:2px solid rgba(255,255,255,0.3);
-    border-radius:10px;
-    color:white;
-    outline:none;
-    transition:0.3s;
-}
+        .social a:hover {
+            color: #ffd700;
+        }
+            
+        
+        
+    </style> 
 
-.input-group input:focus{
-    border-color:#38bdf8;
-    box-shadow:0 0 15px #38bdf8;
-}
-
-.input-group label{
-    position:absolute;
-    left:15px;
-    top:15px;
-    color:#ccc;
-    pointer-events:none;
-    transition:0.3s;
-}
-
-.input-group input:focus~label,
-.input-group input:valid~label{
-    top:-10px;
-    left:10px;
-    font-size:12px;
-    background:#0f172a;
-    padding:0 5px;
-}
-
-.btn{
-    width:100%;
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    background:linear-gradient(45deg,#38bdf8,#6366f1);
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px #38bdf8;
-}
-
-.links{
-    margin-top:20px;
-    text-align:center;
-}
-
-.links a{
-    color:#38bdf8;
-    text-decoration:none;
-}
-
-.links a:hover{
-    text-decoration:underline;
-}
-</style>
 </head>
+
 <body>
+    <header class="header">
+        <nav>
+           <p class="logo"> SDI <span>college</span> Bhadohi</p>
+            <ul>
+                <li><a href="#home">Home</a>  </li>
+                <li><a href="#about">About</a> </li>
+                <li><a href="#acedemic program">Academic program</a> </li>
+                <li><a href="#facilities">Facilities</a>  </li>
+                <li><a href="#notices">Notices</a>  </li>
+                <li><a href="#faculty">Faculty</a>  </li>
+                <li><a href="#admission">Admission</a>  </li>
+            </ul>
+        </nav>
+    </header>
+<section class="admission" id="admission">
+        <h2 class="section-title">Admission Form</h2>
 
-<div class="circle"></div>
-<div class="circle"></div>
+        <form onsubmit="submitForm(event)">
 
-<div class="login-box">
-    <h2>Welcome Back</h2>
+            <div class="form-group">
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    
+                    required
+                >
+            </div>
 
-    <form>
-        <div class="input-group">
-            <input type="email" required>
-            <label>Email </label>
+            <div class="form-group">
+                <label>Email</label>
+                <input
+                    type="email"
+                    
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" required>
+            </div>
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="tel" placeholder="dd-mm-yyyy" required>
+            </div>
+
+            <div class="form-group" >
+                <label>Select Course</label>
+
+                <select required>
+                    <option value="">-- Select class --</option>
+                    <option>class 1</option>
+                    <option>class 2</option>
+                    <option>class 3</option>
+                    <option>class 4</option>
+                    <option>class 5</option>
+                    <option>class 6</option>
+                    <option>class 7</option>
+                    <option>class 8</option>
+                    <option>class 8</option>
+                    <option>Highschool</option>
+                    <option>class 11</option>
+                    <option>Intermediate</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="message">
+                <label>Message</label>
+
+                <textarea
+                    placeholder="Write your message"
+                ></textarea>
+            </div>
+
+            <button type="submit">
+                Submit Application
+            </button>
+
+        </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    
+    <footer>
+
+        <h2>SDI COLLEGE</h2>
+
+        <p>
+            Empowering Students Through Quality Education
+        </p>
+
+        <div class="social">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">YouTube</a>
+            <a href="#">LinkedIn</a>
         </div>
 
-        <div class="input-group">
-            <input type="password" required>
-            <label>Password</label>
-        </div>
+        <p>
+            © 2026 SDI College. All Rights Reserved. Developed by <b>Pradeep maurya</b>
+        </p>
 
-        <button class="btn"><a href="college.html">Login</a></button>
+    </footer>
+    
 
-        <div class="links">
-            <p><a href="#">Forgot Password?</a></p>
-            <a href="student_register.html">Create your account</a>
-        </div>
-    </form>
-</div>
+   
+    <!-- JavaScript -->
+    <script>
 
+        function submitForm(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you! Your admission application has been submitted successfully."
+            );
+
+        }
+
+    </script>
 
 </body>
 </html>
-
