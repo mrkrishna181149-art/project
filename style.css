@@ -1,0 +1,131 @@
+ *{
+    box-sizing:border-b0x;
+ }
+ 
+ body{
+    background-color:rosybrown;
+    padding:0px;
+    margin:0px;
+    overflow-wrap:break-word;
+    min-height:100%;
+    overflow:visible;
+    position:absolute;
+}
+ nav{
+            background-color:rgb(181, 207, 230);
+            display:flex;
+            height:100px;
+            width:auto;
+            border-radius:10px;
+            border:1px solid rgb(105, 168, 216);
+    }
+        #logo{
+            border-radius: 50%;
+        }
+        img{
+            margin:10px 10px 10px 45px;
+            border-radius:30px;
+        }
+        a{
+            margin:50px 0px 0px 60px;
+        }
+        .container{
+            background-color:seashell;
+            border-radius:20px;
+        }
+        h2{
+            text-align:center;
+            color:maroon;
+            font-size:50px;
+        }
+        .container1{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        #download{
+            margin:20px 0px 0px 40px;
+            width: 250px;
+            height: 200px;
+            border:1px solid grey;
+            border-radius:20px;
+            text-align:center;
+        }
+        #update{
+            margin:20px 0px 0px 40px;
+            width: 250px;
+            height: 200px;
+            border:1px solid grey;
+            border-radius:20px;
+            text-align:center;
+        }
+        #boimetrics{
+            margin:20px 0px 0px 40px;
+            width: 250px;
+            height: 200px;
+            border:1px solid grey;
+            border-radius:20px;
+        }
+        #status{
+            margin:20px 0px 0px 40px;
+            width: 250px;
+            height: 200px;
+            border:1px solid grey;
+            border-radius:20px;
+            text-align:center;
+        }
+        .container2{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        #baalAadhaar{
+             margin:20px 0px 0px 70px;
+            width: 250px;
+            height: 200px;
+            border:1px solid grey;
+            border-radius:20px;
+            text-align:center;
+        }
+        #Aadhaarsevakendra{
+             margin:20px 0px 0px 70px;
+            width: 250px;
+            height: 200px;
+            border:1px solid grey;
+            border-radius:20px;
+            text-align:center;
+        }
+        #help{
+             margin:20px 0px 0px 70px;
+            width: 250px;
+            height: 200px;
+            border:1px solid grey;
+            border-radius:20px;
+            text-align:center;
+        }
+
+   #aadhaarboy{
+    margin-right:20px;
+    width:200px;
+    height:250px;
+   }
+   .mobileapp{
+    display:flex;
+    margin:20px 10px 10px 20px;
+    padding:10px;
+       background-color:silver;
+       border-radius:30px;
+   }
+   #mobile{
+    margin-left:10px;
+    font-size:50px;
+    text-align:left;
+    color:black;
+   }
+    .box {
+    width: 100%;
+    min-height: 200px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: lightblue;
+    box-sizing: border-box;
+}
+  
